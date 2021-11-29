@@ -8,6 +8,9 @@ const theme = createTheme({
     secondary: {
       main: "#FFFFFF",
     },
+    notification: {
+      main: "#F8475F",
+    },
   },
   typography: {
     fontFamily: "Nunito, Arial",
