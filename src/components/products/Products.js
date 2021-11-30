@@ -2,6 +2,7 @@ import React from "react";
 import Product from "./Product";
 import { Container, Typography, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
+
 const useStyles = makeStyles((theme) => ({
   title: {
     fontWeight: "900 !important",
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 function Products({ products }) {
   const classes = useStyles();
   return (
-    <Container>
+    <Container style={{ paddingBottom: "70px" }}>
       <Grid className={classes.titleContent}>
         <Typography variant="h1" className={classes.title}>
           Mais Vendidos

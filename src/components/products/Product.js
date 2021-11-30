@@ -91,7 +91,14 @@ function Product({ product }) {
             {format(installments[0].value)}
           </Typography>
         )}
-        <Box style={{ textAlign: "center", paddingTop: "8px" }}>
+        <Box
+          style={{
+            textAlign: "center",
+            paddingTop: "8px",
+            paddingBottom: "8px",
+            justifyContent: "baseline",
+          }}
+        >
           <Button variant="contained">Comprar</Button>
         </Box>
       </Box>

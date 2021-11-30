@@ -1,10 +1,6 @@
 import React from "react";
-import { Box, Container, Typography, Grid, Button } from "@material-ui/core";
-import { makeStyles } from "@material-ui/styles";
-import { Slider, Products } from "../components";
+import { Slider, Products, Newsletter } from "../components";
 import axios from "axios";
-import { ReactComponent as Star } from "../assets/star.svg";
-import { ReactComponent as StarAvoid } from "../assets/star_avoid.svg";
 
 function HomePage() {
   const [products, setProducts] = React.useState([]);
@@ -19,6 +15,7 @@ function HomePage() {
     <>
       <Slider />
       <Products products={products} />
+      <Newsletter />
     </>
   );
 }
