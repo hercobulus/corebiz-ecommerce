@@ -55,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function HomePage() {
+  const [search, setSearch] = React.useState("");
   const classes = useStyles();
   return (
     <Box>
@@ -78,8 +79,8 @@ function HomePage() {
                 <Input
                   id="search"
                   type="text"
-                  value=""
-                  onChange={() => {}}
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
                   endAdornment={
                     <InputAdornment position="end">
                       <IconButton

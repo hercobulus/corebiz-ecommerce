@@ -16,40 +16,53 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "0px",
     marginRight: "0px",
   },
+  boxImage: {
+    position: "absolute",
+    left: "120px",
+    top: "60px",
+  },
+  textSup: {
+    fontSize: "30px !important",
+    lineHeight: "45px !important",
+  },
+  textBottom: {
+    fontSize: "45px !important",
+    fontWeight: "900 !important",
+    lineHeight: "45px !important",
+  },
+  img: {
+    width: "100%",
+  },
 }));
 function Slider() {
   const classes = useStyles();
-
+  const images = [
+    {
+      key: "1",
+      src: "../../../images/slide01.png",
+      alt: "Banner de promoção",
+    },
+    {
+      key: "2",
+      src: "../../../images/slide01.png",
+      alt: "Banner de promoção",
+    },
+  ];
   return (
     <Box className={classes.box}>
       <Swiper pagination={true}>
-        {[0, 1, 2, 3, 4].map((slide) => (
-          <SwiperSlide>
-            <Box style={{ position: "absolute", left: "120px", top: "60px" }}>
-              <Typography
-                style={{
-                  fontSize: "30px",
-                  lineHeight: "45px",
-                }}
-              >
+        {images.map(({ src, alt, key }) => (
+          <SwiperSlide key={key}>
+            <Box className={classes.boxImage}>
+              <Typography className={classes.textSup}>
                 Olá, o que você está buscando?
               </Typography>
-              <Typography
-                style={{
-                  fontSize: "45px",
-                  fontWeight: "900",
-                  lineHeight: "45px",
-                }}
-              >
+              <Typography className={classes.textBottom}>
                 Criar ou migrar seu <br />
                 e-commerce?
               </Typography>
             </Box>
-            <img
-              src="../../../images/slide01.png"
-              alt="Banner de promoção"
-              style={{ width: "100%" }}
-            />
+            <img src={src} alt={alt} className={classes.img} />
           </SwiperSlide>
         ))}
       </Swiper>
