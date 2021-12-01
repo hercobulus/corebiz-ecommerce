@@ -35,7 +35,7 @@ function Footer() {
     >
       <Container>
         <Grid container spacing={1} alignItems="center">
-          <Grid item xs={4}>
+          <Grid item xs={12} md={4}>
             <Typography style={{ fontSize: "20px", fontWeight: 700 }}>
               Localização
             </Typography>
@@ -57,7 +57,8 @@ function Footer() {
           </Grid>
           <Grid
             item
-            xs={4}
+            xs={12}
+            md={4}
             display="flex"
             flexDirection="column"
             alignItems="center"
@@ -68,12 +69,19 @@ function Footer() {
               consultor online
             </ButtonWhite>
           </Grid>
-          <Grid item xs={4} display="flex" flexDirection="row">
-            <Box display="flex" flexDirection="column">
+          <Grid
+            item
+            xs={12}
+            md={4}
+            display="flex"
+            flexDirection="row"
+            justifyContent="center"
+          >
+            <Box display="flex" flexDirection="column" spacing="1">
               <Created />
               <Corebiz />
             </Box>
-            <Box>
+            <Box spacing="1">
               <Powered />
             </Box>
           </Grid>

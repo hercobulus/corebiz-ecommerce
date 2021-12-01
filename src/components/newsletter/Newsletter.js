@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Box, TextField, Button } from "@material-ui/core";
+import { Typography, Box, TextField, Button, Grid } from "@material-ui/core";
 import { emailRegex } from "../../utils/validations";
 
 const INITIAL_VALUE = { name: "", email: "" };
@@ -51,17 +51,20 @@ function Newsletter({ postNewsletter, clearNewsletter, subscribed }) {
     >
       {!subscribed ? (
         <>
-          <Typography
-            style={{ fontWeight: 700, fontSize: "22px", textAlign: "center" }}
-          >
-            Participe de nossas news com promoções e novidades!
-          </Typography>
-          <form
+          <Grid item xs={12}>
+            <Typography
+              style={{ fontWeight: 700, fontSize: "22px", textAlign: "center" }}
+            >
+              Participe de nossas news com promoções e novidades!
+            </Typography>
+          </Grid>
+          <Grid
             style={{
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
             }}
+            direction={{ xs: "column", md: "row" }}
           >
             <TextField
               id="name"
@@ -74,6 +77,7 @@ function Newsletter({ postNewsletter, clearNewsletter, subscribed }) {
               helperText={messages.name}
               sx={{ m: 1, minWidth: "260px", backgroundColor: "#FFFFFF" }}
             />
+
             <TextField
               id="email"
               type="text"
@@ -97,7 +101,7 @@ function Newsletter({ postNewsletter, clearNewsletter, subscribed }) {
             >
               Eu quero!
             </Button>
-          </form>
+          </Grid>
         </>
       ) : (
         <Box>
