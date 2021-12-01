@@ -5,7 +5,12 @@ import { ReactComponent as Star } from "../../assets/star.svg";
 import { ReactComponent as StarAvoid } from "../../assets/star_avoid.svg";
 
 const useStyles = makeStyles((theme) => ({
+  image: {
+    width: "100%",
+  },
   product: {
+    maxWidth: "216px",
+    height: "100%",
     "&:hover": {
       cursor: "pointer",
       backgroundColor: "#E6E8EA",
@@ -35,7 +40,7 @@ function Product({ product }) {
 
   return (
     <Box className={classes.product} key={productId}>
-      <img src={imageUrl} alt={productName} />
+      <img className={classes.image} src={imageUrl} alt={productName} />
       <Box>
         <Typography
           variant="body1"
@@ -52,7 +57,11 @@ function Product({ product }) {
         </Typography>
         <Box style={{ textAlign: "center", paddingBottom: "20px" }}>
           {Array.from(Array(5)).map((r, index) => {
-            return index < stars ? <Star /> : <StarAvoid />;
+            return index < stars ? (
+              <Star key={index} />
+            ) : (
+              <StarAvoid key={index} />
+            );
           })}
         </Box>
         {listPrice && (

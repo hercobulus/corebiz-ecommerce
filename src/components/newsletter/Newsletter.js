@@ -1,6 +1,7 @@
 import React from "react";
 import { Typography, Box, TextField, Button } from "@material-ui/core";
 import { emailRegex } from "../../utils/validations";
+
 const INITIAL_VALUE = { name: "", email: "" };
 
 function Newsletter({ postNewsletter, clearNewsletter, subscribed }) {
@@ -69,7 +70,7 @@ function Newsletter({ postNewsletter, clearNewsletter, subscribed }) {
               variant="outlined"
               onChange={(e) => setUser({ ...user, name: e.target.value })}
               value={user.name}
-              error={messages.name}
+              error={!!messages.name}
               helperText={messages.name}
               sx={{ m: 1, minWidth: "260px", backgroundColor: "#FFFFFF" }}
             />
@@ -80,7 +81,7 @@ function Newsletter({ postNewsletter, clearNewsletter, subscribed }) {
               variant="outlined"
               onChange={(e) => setUser({ ...user, email: e.target.value })}
               value={user.email}
-              error={messages.email}
+              error={!!messages.email}
               helperText={messages.email}
               sx={{ m: 1, minWidth: "260px", backgroundColor: "#FFFFFF" }}
             />
@@ -106,7 +107,7 @@ function Newsletter({ postNewsletter, clearNewsletter, subscribed }) {
             Participe de nossas news com promoções e novidades!
           </Typography>
           <Typography
-            style={{ fontWeight: 700, fontSize: "22px", textAlign: "center" }}
+            style={{ fontWeight: 400, fontSize: "12px", textAlign: "center" }}
           >
             A partir de agora você receberá as novidades e ofertas exclusivas.
           </Typography>

@@ -5,7 +5,6 @@ import {
   Grid,
   Box,
   Button,
-  Item,
   List,
   ListItem,
   ListItemText,
@@ -69,7 +68,7 @@ function Footer() {
               consultor online
             </ButtonWhite>
           </Grid>
-          <Grid xs={4} display="flex" flexDirection="row">
+          <Grid item xs={4} display="flex" flexDirection="row">
             <Box display="flex" flexDirection="column">
               <Created />
               <Corebiz />

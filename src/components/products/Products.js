@@ -1,7 +1,10 @@
 import React from "react";
 import Product from "./Product";
 import { Container, Typography, Grid } from "@material-ui/core";
+import NavigateBefore from "@material-ui/icons/NavigateBefore";
+import NavigateNext from "@material-ui/icons/NavigateNext";
 import { makeStyles } from "@material-ui/styles";
+import { Carousel } from "@trendyol-js/react-carousel";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -35,9 +38,22 @@ function Products({ products }) {
         <span className={classes.separator}></span>
       </Grid>
       <Grid className={classes.products}>
-        {products.map((product) => (
-          <Product product={product} />
-        ))}
+        <Carousel
+          show={4}
+          slide={4}
+          swiping={true}
+          //useArrowKeys={true}
+          dynamic={true}
+        >
+          {products.map((product) => (
+            <Product
+              key={product.productId}
+              product={product}
+              leftArrom={<NavigateBefore />}
+              rightArrow={<NavigateNext />}
+            />
+          ))}
+        </Carousel>
       </Grid>
     </Container>
   );
