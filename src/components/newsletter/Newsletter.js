@@ -64,6 +64,7 @@ function Newsletter({ postNewsletter, clearNewsletter, subscribed }) {
               justifyContent: "center",
               alignItems: "center",
             }}
+            container
             direction={{ xs: "column", md: "row" }}
           >
             <TextField
