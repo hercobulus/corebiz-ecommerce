@@ -1,5 +1,5 @@
 import React from "react";
-import { Slider, Products, Newsletter, Footer } from "../components";
+import { Slider, Products, Newsletter } from "../components";
 import axios from "axios";
 
 function HomePage() {
@@ -16,7 +16,6 @@ function HomePage() {
       <Slider />
       <Products products={products} />
       <Newsletter />
-      <Footer />
     </>
   );
 }
