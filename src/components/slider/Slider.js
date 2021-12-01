@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography } from "@material-ui/core";
+import { Box, Typography, Hidden } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
@@ -22,11 +22,9 @@ const useStyles = makeStyles((theme) => ({
     top: "60px",
   },
   textSup: {
-    fontSize: "30px !important",
     lineHeight: "45px !important",
   },
   textBottom: {
-    fontSize: "45px !important",
     fontWeight: "900 !important",
     lineHeight: "45px !important",
   },
@@ -39,30 +37,63 @@ function Slider() {
   const images = [
     {
       key: "1",
-      src: "../../../images/slide01.png",
+      srcDesktop: "../../../images/slide01.png",
+      srcMobile: "../../../images/slide01mobile.png",
       alt: "Banner de promoção",
     },
     {
       key: "2",
-      src: "../../../images/slide01.png",
+      srcDesktop: "../../../images/slide01.png",
+      srcMobile: "../../../images/slide01mobile.png",
+      alt: "Banner de promoção",
+    },
+    {
+      key: "3",
+      srcDesktop: "../../../images/slide01.png",
+      srcMobile: "../../../images/slide01mobile.png",
+      alt: "Banner de promoção",
+    },
+    {
+      key: "4",
+      srcDesktop: "../../../images/slide01.png",
+      srcMobile: "../../../images/slide01mobile.png",
       alt: "Banner de promoção",
     },
   ];
   return (
     <Box className={classes.box}>
       <Swiper pagination={true}>
-        {images.map(({ src, alt, key }) => (
+        {images.map(({ srcDesktop, srcMobile, alt, key }) => (
           <SwiperSlide key={key}>
             <Box className={classes.boxImage}>
-              <Typography className={classes.textSup}>
+              <Typography
+                className={classes.textSup}
+                fontSize={{
+                  md: "30px",
+                  sm: "20px",
+                  xs: "20px",
+                }}
+              >
                 Olá, o que você está buscando?
               </Typography>
-              <Typography className={classes.textBottom}>
+              <Typography
+                className={classes.textBottom}
+                fontSize={{
+                  md: "45px",
+                  sm: "30px",
+                  xs: "30px",
+                }}
+              >
                 Criar ou migrar seu <br />
                 e-commerce?
               </Typography>
             </Box>
-            <img src={src} alt={alt} className={classes.img} />
+            <Hidden mdDown>
+              <img src={srcDesktop} alt={alt} className={classes.img} />
+            </Hidden>
+            <Hidden mdUp>
+              <img src={srcMobile} alt={alt} className={classes.img} />
+            </Hidden>
           </SwiperSlide>
         ))}
       </Swiper>
